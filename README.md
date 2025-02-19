@@ -1,1 +1,1 @@
-https://niksdev.ru ?
+https://niksdev.ru/
