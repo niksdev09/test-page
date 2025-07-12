@@ -10,7 +10,6 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-background">
       <div>
-        {/* Navigation */}
         <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
           <div className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
@@ -34,20 +33,16 @@ export default function NotFound() {
           </div>
         </nav>
 
-        {/* 404 Content */}
         <section className="min-h-screen flex items-center justify-center pt-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <div className="animate-fade-in">
-                {/* 404 Illustration */}
                 <div className="mb-8">
                   <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80">
-                    {/* Animated 404 */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-8xl md:text-9xl font-bold text-primary/20 select-none">404</div>
                     </div>
 
-                    {/* Floating Icons */}
                     <div className="absolute top-4 left-4 animate-bounce">
                       <div className="p-3 bg-primary/10 rounded-full">
                         <FileQuestion className="h-6 w-6 text-primary" />
@@ -68,7 +63,6 @@ export default function NotFound() {
                   </div>
                 </div>
 
-                {/* Error Message */}
                 <div className="mb-8">
                   <h1 className="text-4xl md:text-6xl font-bold mb-4">
                     Упс! <span className="text-primary">Страница не найдена</span>
@@ -78,12 +72,11 @@ export default function NotFound() {
                   </p>
                 </div>
 
-                {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                   <Link href="/">
                     <Button size="lg" className="w-full sm:w-auto">
                       <Home className="h-5 w-5 mr-2" />
-                      Back to Home
+                      Вернуться на главную
                     </Button>
                   </Link>
                 </div>
@@ -92,7 +85,6 @@ export default function NotFound() {
           </div>
         </section>
 
-        {/* Footer */}
         <footer className="py-8 border-t bg-muted/50">
           <div className="container mx-auto px-4 text-center">
             <p className="text-muted-foreground">

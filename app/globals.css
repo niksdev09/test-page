@@ -123,4 +123,10 @@ body {
   animation: bounce 2s infinite;
 }
 
-
+.blinking-cursor {
+  display: inline-block;
+  font-size: inherit; 
+  line-height: inherit; 
+  font-weight: 300; 
+  vertical-align: baseline; 
+}

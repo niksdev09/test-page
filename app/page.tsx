@@ -23,6 +23,7 @@ import {
 import Link from "next/link"
 import Image from "next/image"
 import { siTelegram } from "simple-icons"
+import TypingText from "@/components/typing-text"
 
 
 
@@ -37,6 +38,7 @@ export default function NiksDevWebsite() {
     projects: "Проекты",
     skills: "Навыки"
   }
+  const sections: (keyof typeof sectionLabels)[] = ["home", "projects", "skills"]
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -48,7 +50,17 @@ export default function NiksDevWebsite() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "projects", "skills"]
+      const scrollY = window.scrollY
+      const viewportHeight = window.innerHeight
+      const documentHeight = document.documentElement.scrollHeight
+
+      const bottomThreshold = 50
+
+      if (scrollY + viewportHeight >= documentHeight - bottomThreshold) {
+        setActiveSection(sections[sections.length - 1])
+        return
+      }
+
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -56,7 +68,6 @@ export default function NiksDevWebsite() {
         if (element) {
           const offsetTop = element.offsetTop
           const offsetHeight = element.offsetHeight
-
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section)
             break
@@ -67,7 +78,7 @@ export default function NiksDevWebsite() {
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [sections])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -148,7 +159,7 @@ export default function NiksDevWebsite() {
                 />
               </Link>
               <div className="hidden md:flex space-x-8">
-                {["home", "projects", "skills"].map((section) => (
+                {sections.map((section) => (
                   <button
                     key={section}
                     onClick={() => scrollToSection(section)}
@@ -167,7 +178,7 @@ export default function NiksDevWebsite() {
             {isMenuOpen && (
               <div className="md:hidden mt-4 pb-4 border-t">
                 <div className="flex flex-col space-y-4 pt-4">
-                  {["home", "projects", "skills"].map((section) => (
+                  {sections.map((section) => (
                     <button
                       key={section}
                       onClick={() => scrollToSection(section)}
@@ -181,11 +192,18 @@ export default function NiksDevWebsite() {
             )}
           </div>
         </nav>
-        <section id="home" className="min-h-screen flex items-center justify-center pt-16">
+        <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative">
           <div className="container mx-auto px-4 text-center">
             <div className="animate-fade-in">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Hi, I'm <span className="text-primary">NikS</span>
+                <TypingText
+                  parts={[
+                    { text: "Hi, I'm " },
+                    { text: "NikS", className: "text-primary" },
+                  ]}
+                  speed={100}
+                  active={!isLoading}
+                />
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                 Developer & Pentester
