@@ -85,7 +85,7 @@ export default function NiksDevWebsite() {
 
   const projects = [
     {
-      title: "Telegram ChatGPT Bot",
+      title: "Telegram ChatGPT Bot.",
       description:
         "Бот Telegram, в котором пользователи могут взаимодействовать с моделями ИИ (OpenAI, Google, Kandinsky, Flux).",
       tech: [],
