@@ -24,7 +24,16 @@ import Link from "next/link"
 import Image from "next/image"
 import { siTelegram } from "simple-icons"
 
-
+type Project = {
+  title: string
+  description: string
+  tech: string[]
+  github?: string
+  live: string
+  image: string
+  imageWidth?: number
+  imageHeight?: number
+}
 
 export default function NiksDevWebsite() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -83,7 +92,7 @@ export default function NiksDevWebsite() {
     { category: "Tools", items: ["Git", "Docker"] }
   ]
 
-  const projects = [
+  const projects: Project[] = [
     {
       title: "Telegram ChatGPT Bot.",
       description:
