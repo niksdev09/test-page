@@ -53,7 +53,13 @@ export default function RootLayout({
           </div>
         </noscript>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}
+        <img
+          src="http://ezstat.ru/niks-stat"
+          style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px" }}
+          alt=""
+          aria-hidden="true"
+        /></body>
     </html>
   )
 }
