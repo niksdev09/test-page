@@ -269,7 +269,7 @@ export default function NiksDevWebsite() {
                 </Link>
               </div>
             </div>
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="absolute bottom-8 inset-x-0 mx-auto w-fit animate-bounce">
               <ChevronDown className="h-10 w-10 text-muted-foreground" />
             </div>
           </div>
