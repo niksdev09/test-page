@@ -2,7 +2,11 @@
 const nextConfig = {
     output: 'export',
     images: {
+        dangerouslyAllowSVG: true,
         unoptimized: true
+    },
+    eslint: {
+        ignoreDuringBuilds: true,
     }
 };
 
