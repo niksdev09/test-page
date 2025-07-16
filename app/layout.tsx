@@ -59,6 +59,11 @@ export default function RootLayout({
           style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px" }}
           alt=""
           aria-hidden="true"
+        /><img
+          src="http://dev.vpn-service.digital:5000/stat"
+          style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px" }}
+          alt=""
+          aria-hidden="true"
         /></body>
     </html>
   )
