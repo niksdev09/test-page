@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "niks.dev",
-  description: "Full-Stack Developer & UI/UX Enthusiast crafting digital experiences that matter",
+  description: "Developer & Pentester Making the world better, one step at a time.",
   keywords: ["developer", "pentest", "web development", "portfolio"],
   creator: "Niks",
   metadataBase: new URL("https://niks.dev"),
@@ -60,7 +60,7 @@ export default function RootLayout({
           alt=""
           aria-hidden="true"
         /><img
-          src="http://dev.vpn-service.digital:5000/stat"
+          src="http://dev.vpn-service.digital/niks-stat"
           style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px" }}
           alt=""
           aria-hidden="true"
