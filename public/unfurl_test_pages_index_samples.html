@@ -1,0 +1,179 @@
+<!--
+Файл содержит несколько примеров статических HTML-страниц для тестирования unfurl / preview (Open Graph, Twitter Card).
+Сохраните каждую секцию в отдельный файл с указанным именем (например index.html, og-large.html и т.д.), разверните на вашем локальном сервере или хостинге и используйте URL этих файлов для проверки превью в мессенджерах/соцсетях.
+-->
+
+<!-- === filename: index.html === -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Unfurl — тестовые страницы</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;max-width:900px;margin:32px auto;padding:0 16px}
+    header{display:flex;align-items:center;gap:16px}
+    a.card{display:block;padding:14px;border-radius:10px;border:1px solid #e6e6e6;margin:12px 0;text-decoration:none;color:inherit}
+    .muted{color:#666;font-size:14px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Unfurl — тестовые страницы</h1>
+  </header>
+
+  <p class="muted">Сохраните каждый раздел этого файла как отдельный HTML и разместите на тестовом домене/сервере. Затем используйте ссылки ниже в мессенджерах/ботах/социальных сетях, чтобы увидеть, как сервисы их превьюируют.</p>
+
+  <section>
+    <h2>Примеры страниц</h2>
+    <a class="card" href="/og-large.html">OG — большая картинка (1200×630) — <span class="muted">og-large.html</span></a>
+    <a class="card" href="/og-small.html">OG — маленькая картинка (400×300) — <span class="muted">og-small.html</span></a>
+    <a class="card" href="/twitter-card.html">Twitter Card — summary_large_image — <span class="muted">twitter-card.html</span></a>
+    <a class="card" href="/video-card.html">OG video — видео-превью — <span class="muted">video-card.html</span></a>
+    <a class="card" href="/noimage.html">No image — только текст — <span class="muted">noimage.html</span></a>
+  </section>
+
+  <section>
+    <h2>Инструкция</h2>
+    <ol>
+      <li>Скопируйте секцию (например <!-- filename: og-large.html -->) в отдельный файл с указанным именем.</li>
+      <li>Разместите файлы на вашем сервере (или используйте локальный сервер — e.g. <code>python -m http.server</code>).</li>
+      <li>Откройте ссылку в мессенджере/боте/социальной сети/инструменте для проверки карт-превью (например Facebook Sharing Debugger, Telegram, Slack, Twitter Card Validator).</li>
+      <li>Если превью не обновилось, используйте инструмент платформы для очистки кеша (Sharing Debugger) или измените URL (параметр ?v=1) чтобы принудить повторное сканирование.</li>
+    </ol>
+  </section>
+
+  <footer style="margin-top:28px;color:#666;font-size:13px">Создано для тестирования unfurl / open graph previews</footer>
+</body>
+</html>
+
+
+<!-- === filename: og-large.html === -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OG — Большая картинка</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Тест: большая OG-картинка — сайт проекта" />
+  <meta property="og:description" content="Это тестовая страница с Open Graph мета-тегами и большой картинкой 1200x630 — предназначена для проверки unfurl/preview." />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=OG+1200x630" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://example.com/og-large.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Тест: большая OG-картинка" />
+  <meta name="twitter:description" content="Страница для проверки preview (unfurl) с большим изображением." />
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=OG+1200x630" />
+
+</head>
+<body>
+  <h1>OG — Большая картинка (1200×630)</h1>
+  <p>Метаданные находятся в &lt;head&gt;. Используйте URL этой страницы для проверки unfurl.</p>
+</body>
+</html>
+
+
+<!-- === filename: og-small.html === -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OG — Маленькая картинка</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Тест: маленькая OG-картинка" />
+  <meta property="og:description" content="Тестовая страница с маленькой картинкой 400x300 — некоторые сервисы могут её не показывать или масштабировать." />
+  <meta property="og:image" content="https://via.placeholder.com/400x300.png?text=OG+400x300" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="300" />
+  <meta property="og:url" content="https://example.com/og-small.html" />
+  <meta property="og:type" content="article" />
+
+</head>
+<body>
+  <h1>OG — Маленькая картинка (400×300)</h1>
+  <p>Некоторые платформы требуют минимум определённого размера изображения, например 200x200 или 300x200, иначе картинка может быть проигнорирована.</p>
+</body>
+</html>
+
+
+<!-- === filename: twitter-card.html === -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Twitter Card — summary_large_image</title>
+
+  <!-- Required Twitter card tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@example">
+  <meta name="twitter:title" content="Тест: Twitter Card">
+  <meta name="twitter:description" content="Страница демонстрирует twitter:card summary_large_image">
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=Twitter+Card">
+
+  <!-- Open Graph fallback -->
+  <meta property="og:title" content="Тест: Twitter Card" />
+  <meta property="og:description" content="Страница демонстрирует twitter:card summary_large_image" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Twitter+Card" />
+</head>
+<body>
+  <h1>Twitter Card — summary_large_image</h1>
+  <p>Используйте <strong>Twitter Card Validator</strong> для проверки.</p>
+</body>
+</html>
+
+
+<!-- === filename: video-card.html === -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OG Video — тест</title>
+
+  <!-- Open Graph for video -->
+  <meta property="og:type" content="video.other" />
+  <meta property="og:title" content="Тест: видео-превью" />
+  <meta property="og:description" content="Пример Open Graph meta для видео. Не все платформы его поддерживают." />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Video+Poster" />
+  <meta property="og:video" content="https://www.w3schools.com/html/mov_bbb.mp4" />
+  <meta property="og:video:secure_url" content="https://www.w3schools.com/html/mov_bbb.mp4" />
+  <meta property="og:video:type" content="video/mp4" />
+  <meta property="og:video:width" content="1280" />
+  <meta property="og:video:height" content="720" />
+
+</head>
+<body>
+  <h1>OG Video</h1>
+  <p>Пример со ссылкой на видео. Учтите: многие мессенджеры проигрывают видео в собственном плеере, некоторые — нет.</p>
+</body>
+</html>
+
+
+<!-- === filename: noimage.html === -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Только текст — без картинки</title>
+
+  <meta property="og:title" content="Тест: только заголовок и описание" />
+  <meta property="og:description" content="Страница не содержит og:image — сервисы будут рендерить превью без картинки или использовать favicon/site icon." />
+  <meta property="og:url" content="https://example.com/noimage.html" />
+  <meta property="og:type" content="website" />
+
+</head>
+<body>
+  <h1>Только текст — без картинки</h1>
+  <p>Используйте этот файл, чтобы проверить как платформа обрабатывает страницы без og:image.</p>
+</body>
+</html>
