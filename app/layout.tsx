@@ -6,10 +6,10 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "niks.dev",
+  title: "niks.dev assuidghcgdghshgsdffjhsgsafgjhsgakdduyfgdshkxjhugfurfeyhdscjasghfgdsfdsfdsfsdf",
   description: "Developer & Pentester Making the world better, one step at a time.",
   keywords: ["developer", "pentest", "web development", "portfolio"],
-  creator: "Niks",
+  creator: "NikS",
   metadataBase: new URL("https://niks.dev"),
   
 };
